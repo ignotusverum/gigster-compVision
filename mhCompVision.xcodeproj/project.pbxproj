@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BE5BE7CA1FFC48B9009FA5CB /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5BE7C91FFC48B9009FA5CB /* OnboardingViewController.swift */; };
+		BE5BE7CA1FFC48B9009FA5CB /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5BE7C91FFC48B9009FA5CB /* OnboardingContainerViewController.swift */; };
+		BE5BE7CC1FFC4BB3009FA5CB /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5BE7CB1FFC4BB3009FA5CB /* OnboardingViewController.swift */; };
+		BE5BE8061FFC4CB0009FA5CB /* Knockout-HTF29-JuniorLiteweight.otf in Resources */ = {isa = PBXBuildFile; fileRef = BE5BE7E61FFC4CAE009FA5CB /* Knockout-HTF29-JuniorLiteweight.otf */; };
+		BE5BE83B1FFC4D29009FA5CB /* TradeGotBol.otf in Resources */ = {isa = PBXBuildFile; fileRef = BE5BE8161FFC4D24009FA5CB /* TradeGotBol.otf */; };
+		BE5BE8481FFC4D29009FA5CB /* TradeGot.otf in Resources */ = {isa = PBXBuildFile; fileRef = BE5BE8231FFC4D26009FA5CB /* TradeGot.otf */; };
 		BE72DBE71FF30A9E009F6381 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE72DBE61FF30A9E009F6381 /* AppDelegate.swift */; };
 		BE72DBEE1FF30A9F009F6381 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE72DBED1FF30A9F009F6381 /* Assets.xcassets */; };
 		BE72DBF11FF30A9F009F6381 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE72DBEF1FF30A9F009F6381 /* LaunchScreen.storyboard */; };
@@ -18,7 +22,11 @@
 		1E2FBD146135690141CEDE76 /* Pods-mhCompVision.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mhCompVision.release.xcconfig"; path = "Pods/Target Support Files/Pods-mhCompVision/Pods-mhCompVision.release.xcconfig"; sourceTree = "<group>"; };
 		3C60F9F7D201D3559BF05360 /* Pods-mhCompVision.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mhCompVision.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mhCompVision/Pods-mhCompVision.debug.xcconfig"; sourceTree = "<group>"; };
 		7A31B8DF7ABE77C20509E432 /* Pods_mhCompVision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mhCompVision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE5BE7C91FFC48B9009FA5CB /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		BE5BE7C91FFC48B9009FA5CB /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
+		BE5BE7CB1FFC4BB3009FA5CB /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		BE5BE7E61FFC4CAE009FA5CB /* Knockout-HTF29-JuniorLiteweight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Knockout-HTF29-JuniorLiteweight.otf"; sourceTree = "<group>"; };
+		BE5BE8161FFC4D24009FA5CB /* TradeGotBol.otf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TradeGotBol.otf; sourceTree = "<group>"; };
+		BE5BE8231FFC4D26009FA5CB /* TradeGot.otf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TradeGot.otf; sourceTree = "<group>"; };
 		BE72DBE31FF30A9E009F6381 /* mhCompVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mhCompVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE72DBE61FF30A9E009F6381 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE72DBED1FF30A9F009F6381 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,9 +65,28 @@
 		BE5BE7C81FFC48B0009FA5CB /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				BE5BE7C91FFC48B9009FA5CB /* OnboardingViewController.swift */,
+				BE5BE7CB1FFC4BB3009FA5CB /* OnboardingViewController.swift */,
+				BE5BE7C91FFC48B9009FA5CB /* OnboardingContainerViewController.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		BE5BE7CD1FFC4C93009FA5CB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				BE5BE7CE1FFC4C98009FA5CB /* Fonts */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		BE5BE7CE1FFC4C98009FA5CB /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BE5BE8231FFC4D26009FA5CB /* TradeGot.otf */,
+				BE5BE8161FFC4D24009FA5CB /* TradeGotBol.otf */,
+				BE5BE7E61FFC4CAE009FA5CB /* Knockout-HTF29-JuniorLiteweight.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		BE72DBDA1FF30A9E009F6381 = {
@@ -83,6 +110,7 @@
 		BE72DBE51FF30A9E009F6381 /* mhCompVision */ = {
 			isa = PBXGroup;
 			children = (
+				BE5BE7CD1FFC4C93009FA5CB /* Utilities */,
 				BE72DBE61FF30A9E009F6381 /* AppDelegate.swift */,
 				BE5BE7C71FFC48A1009FA5CB /* Sections */,
 				BE72DBED1FF30A9F009F6381 /* Assets.xcassets */,
@@ -163,7 +191,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE5BE8061FFC4CB0009FA5CB /* Knockout-HTF29-JuniorLiteweight.otf in Resources */,
 				BE72DBF11FF30A9F009F6381 /* LaunchScreen.storyboard in Resources */,
+				BE5BE83B1FFC4D29009FA5CB /* TradeGotBol.otf in Resources */,
+				BE5BE8481FFC4D29009FA5CB /* TradeGot.otf in Resources */,
 				BE72DBEE1FF30A9F009F6381 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,7 +281,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE72DBE71FF30A9E009F6381 /* AppDelegate.swift in Sources */,
-				BE5BE7CA1FFC48B9009FA5CB /* OnboardingViewController.swift in Sources */,
+				BE5BE7CC1FFC4BB3009FA5CB /* OnboardingViewController.swift in Sources */,
+				BE5BE7CA1FFC48B9009FA5CB /* OnboardingContainerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
