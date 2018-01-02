@@ -18,7 +18,7 @@ def shared_pods
     pod 'Locksmith'
     
     # Photo viewer
-    pod 'SKPhotoBrowser', '4.1.1'
+    pod 'SKPhotoBrowser'
     
     # Networking
     pod 'Alamofire'
@@ -35,15 +35,13 @@ def shared_pods
     pod 'SwiftyJSON'
     
     # Layout
-    pod 'SnapKit', '3.2.0'
+    pod 'SnapKit'
     
     #Image fetching
-    pod 'Kingfisher', '3.13.1'
+    pod 'Kingfisher'
     
     # Utilities
     pod 'PromiseKit'
-    pod 'EZSwiftExtensions'
-
 end
 
 target 'mhCompVision' do

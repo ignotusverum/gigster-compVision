@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE5BE7CA1FFC48B9009FA5CB /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5BE7C91FFC48B9009FA5CB /* OnboardingViewController.swift */; };
 		BE72DBE71FF30A9E009F6381 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE72DBE61FF30A9E009F6381 /* AppDelegate.swift */; };
 		BE72DBEE1FF30A9F009F6381 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE72DBED1FF30A9F009F6381 /* Assets.xcassets */; };
 		BE72DBF11FF30A9F009F6381 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE72DBEF1FF30A9F009F6381 /* LaunchScreen.storyboard */; };
@@ -17,6 +18,7 @@
 		1E2FBD146135690141CEDE76 /* Pods-mhCompVision.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mhCompVision.release.xcconfig"; path = "Pods/Target Support Files/Pods-mhCompVision/Pods-mhCompVision.release.xcconfig"; sourceTree = "<group>"; };
 		3C60F9F7D201D3559BF05360 /* Pods-mhCompVision.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mhCompVision.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mhCompVision/Pods-mhCompVision.debug.xcconfig"; sourceTree = "<group>"; };
 		7A31B8DF7ABE77C20509E432 /* Pods_mhCompVision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mhCompVision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE5BE7C91FFC48B9009FA5CB /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		BE72DBE31FF30A9E009F6381 /* mhCompVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mhCompVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE72DBE61FF30A9E009F6381 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE72DBED1FF30A9F009F6381 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,6 +46,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BE5BE7C71FFC48A1009FA5CB /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				BE5BE7C81FFC48B0009FA5CB /* Onboarding */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		BE5BE7C81FFC48B0009FA5CB /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				BE5BE7C91FFC48B9009FA5CB /* OnboardingViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		BE72DBDA1FF30A9E009F6381 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				BE72DBE61FF30A9E009F6381 /* AppDelegate.swift */,
+				BE5BE7C71FFC48A1009FA5CB /* Sections */,
 				BE72DBED1FF30A9F009F6381 /* Assets.xcassets */,
 				BE72DBEF1FF30A9F009F6381 /* LaunchScreen.storyboard */,
 				BE72DBF21FF30A9F009F6381 /* Info.plist */,
@@ -193,7 +212,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-mhCompVision/Pods-mhCompVision-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/EZSwiftExtensions/EZSwiftExtensions.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
@@ -208,7 +226,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZSwiftExtensions.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
@@ -233,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE72DBE71FF30A9E009F6381 /* AppDelegate.swift in Sources */,
+				BE5BE7CA1FFC48B9009FA5CB /* OnboardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
