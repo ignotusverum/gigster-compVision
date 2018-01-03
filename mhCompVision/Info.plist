@@ -22,8 +22,8 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>TradeGot.ttf</string>
-		<string>TradeGotBol.ttf</string>
+		<string>TradeGothic-Bold.ttf</string>
+		<string>TradeGothic.ttf</string>
 		<string>Knockout-HTF29-JuniorLiteweight.otf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
