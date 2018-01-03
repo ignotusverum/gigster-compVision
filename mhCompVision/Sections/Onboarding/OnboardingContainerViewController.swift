@@ -23,3 +23,44 @@ class OnboardingContainerViewController: UIViewController {
     /// Datasource
     var controllers: [UIViewController] = []
 }
+
+extension OnboardingContainerViewController: UIPageViewControllerDataSource {
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        
+        guard var index = controllers.index(of: viewController) else {
+            return nil
+        }
+        
+        index -= 1
+        
+        if index < 0 {
+            return nil
+        }
+        
+        return controllers[index]
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        
+        guard var index = controllers.index(of: viewController) else {
+            return nil
+        }
+        
+        index += 1
+        
+        if index == controllers.count {
+            return nil
+        }
+        
+        return controllers[index]
+    }
+    
+    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return controllers.count
+    }
+    
+    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return 0
+    }
+}
