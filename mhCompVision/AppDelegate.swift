@@ -18,6 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.makeKeyAndVisible()
         
+        for family in UIFont.familyNames {
+            print("\(family)")
+            
+            for name in UIFont.fontNames(forFamilyName: family) {
+                print("   \(name)")
+            }
+        }
+        
         window?.rootViewController = OnboardingContainerViewController()
         
         return true
