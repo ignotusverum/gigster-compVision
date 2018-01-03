@@ -18,18 +18,16 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>TradeGot.otf</string>
-		<string>TradeGotBol.otf</string>
-		<string>Knockout-HTF29-JuniorLiteweight.otf</string>
-	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>TradeGot.ttf</string>
+		<string>TradeGotBol.ttf</string>
+		<string>Knockout-HTF29-JuniorLiteweight.otf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
-	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

@@ -10,8 +10,8 @@
 		BE5BE7CA1FFC48B9009FA5CB /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5BE7C91FFC48B9009FA5CB /* OnboardingContainerViewController.swift */; };
 		BE5BE7CC1FFC4BB3009FA5CB /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5BE7CB1FFC4BB3009FA5CB /* OnboardingViewController.swift */; };
 		BE5BE8061FFC4CB0009FA5CB /* Knockout-HTF29-JuniorLiteweight.otf in Resources */ = {isa = PBXBuildFile; fileRef = BE5BE7E61FFC4CAE009FA5CB /* Knockout-HTF29-JuniorLiteweight.otf */; };
-		BE5BE83B1FFC4D29009FA5CB /* TradeGotBol.otf in Resources */ = {isa = PBXBuildFile; fileRef = BE5BE8161FFC4D24009FA5CB /* TradeGotBol.otf */; };
-		BE5BE8481FFC4D29009FA5CB /* TradeGot.otf in Resources */ = {isa = PBXBuildFile; fileRef = BE5BE8231FFC4D26009FA5CB /* TradeGot.otf */; };
+		BE5BE85B1FFC518E009FA5CB /* TradeGotBol.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE5BE8591FFC518E009FA5CB /* TradeGotBol.ttf */; };
+		BE5BE85C1FFC518E009FA5CB /* TradeGot.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE5BE85A1FFC518E009FA5CB /* TradeGot.ttf */; };
 		BE72DBE71FF30A9E009F6381 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE72DBE61FF30A9E009F6381 /* AppDelegate.swift */; };
 		BE72DBEE1FF30A9F009F6381 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE72DBED1FF30A9F009F6381 /* Assets.xcassets */; };
 		BE72DBF11FF30A9F009F6381 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE72DBEF1FF30A9F009F6381 /* LaunchScreen.storyboard */; };
@@ -25,8 +25,8 @@
 		BE5BE7C91FFC48B9009FA5CB /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		BE5BE7CB1FFC4BB3009FA5CB /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		BE5BE7E61FFC4CAE009FA5CB /* Knockout-HTF29-JuniorLiteweight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Knockout-HTF29-JuniorLiteweight.otf"; sourceTree = "<group>"; };
-		BE5BE8161FFC4D24009FA5CB /* TradeGotBol.otf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TradeGotBol.otf; sourceTree = "<group>"; };
-		BE5BE8231FFC4D26009FA5CB /* TradeGot.otf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TradeGot.otf; sourceTree = "<group>"; };
+		BE5BE8591FFC518E009FA5CB /* TradeGotBol.ttf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TradeGotBol.ttf; sourceTree = "<group>"; };
+		BE5BE85A1FFC518E009FA5CB /* TradeGot.ttf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TradeGot.ttf; sourceTree = "<group>"; };
 		BE72DBE31FF30A9E009F6381 /* mhCompVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mhCompVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE72DBE61FF30A9E009F6381 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE72DBED1FF30A9F009F6381 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -82,8 +82,8 @@
 		BE5BE7CE1FFC4C98009FA5CB /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				BE5BE8231FFC4D26009FA5CB /* TradeGot.otf */,
-				BE5BE8161FFC4D24009FA5CB /* TradeGotBol.otf */,
+				BE5BE85A1FFC518E009FA5CB /* TradeGot.ttf */,
+				BE5BE8591FFC518E009FA5CB /* TradeGotBol.ttf */,
 				BE5BE7E61FFC4CAE009FA5CB /* Knockout-HTF29-JuniorLiteweight.otf */,
 			);
 			path = Fonts;
@@ -193,9 +193,9 @@
 			files = (
 				BE5BE8061FFC4CB0009FA5CB /* Knockout-HTF29-JuniorLiteweight.otf in Resources */,
 				BE72DBF11FF30A9F009F6381 /* LaunchScreen.storyboard in Resources */,
-				BE5BE83B1FFC4D29009FA5CB /* TradeGotBol.otf in Resources */,
-				BE5BE8481FFC4D29009FA5CB /* TradeGot.otf in Resources */,
+				BE5BE85B1FFC518E009FA5CB /* TradeGotBol.ttf in Resources */,
 				BE72DBEE1FF30A9F009F6381 /* Assets.xcassets in Resources */,
+				BE5BE85C1FFC518E009FA5CB /* TradeGot.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
