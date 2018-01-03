@@ -22,6 +22,12 @@ class OnboardingContainerViewController: UIViewController {
     
     /// Datasource
     var controllers: [UIViewController] = []
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+    }
 }
 
 extension OnboardingContainerViewController: UIPageViewControllerDataSource {
