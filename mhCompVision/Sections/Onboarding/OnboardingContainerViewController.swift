@@ -27,8 +27,9 @@ class OnboardingContainerViewController: UIViewController {
     lazy var pageControl: UIPageControl = {
        
         let pageControl = UIPageControl()
-        pageControl.pageIndicatorTintColor = UIColor.gray
-        pageControl.currentPageIndicatorTintColor = UIColor.blue
+        
+        pageControl.pageIndicatorTintColor = .gray
+        pageControl.currentPageIndicatorTintColor = .blue
         
         return pageControl
     }()
@@ -71,6 +72,7 @@ class OnboardingContainerViewController: UIViewController {
         addChildViewController(pageVC)
         view.addSubview(pageVC.view)
         
+        pageVC.delegate = self
         pageVC.dataSource = self
         
         /// Page controller layout
@@ -96,11 +98,6 @@ class OnboardingContainerViewController: UIViewController {
             maker.height.equalTo(40)
         }
         
-        let appearance = UIPageControl.appearance()
-        appearance.pageIndicatorTintColor = UIColor.gray
-        appearance.currentPageIndicatorTintColor = UIColor.black
-        appearance.backgroundColor = UIColor.darkGray
-        
         /// Update datasource
         datasourceSetup()
     }
@@ -113,7 +110,7 @@ class OnboardingContainerViewController: UIViewController {
         }
         
         secondTutorialVC.onButtonAction { [weak self] in
-            self?.slideToPage(index: 1, completion: nil)
+            self?.slideToPage(index: 2, completion: nil)
         }
         
         thirdTutorialVC.onButtonAction {
@@ -135,6 +132,7 @@ class OnboardingContainerViewController: UIViewController {
             
             pageVC.setViewControllers([controllers[index]], direction: .forward, animated: true, completion: {[weak self] (complete: Bool) -> Void in
                 
+                self?.pageControl.currentPage = index
                 self?.currentIndex = index
                 completion?()
             })
@@ -143,6 +141,7 @@ class OnboardingContainerViewController: UIViewController {
             pageVC.setViewControllers([controllers[index]], direction: .reverse, animated: true, completion: {[weak self] (complete: Bool) -> Void in
                 
                 self?.currentIndex = index
+                self?.pageControl.currentPage = index
                 completion?()
             })
         }
@@ -202,6 +201,7 @@ extension OnboardingContainerViewController: UIPageViewControllerDelegate {
             }
             
             pageControl.currentPage = index
+            currentIndex = index
         }
     }
 }

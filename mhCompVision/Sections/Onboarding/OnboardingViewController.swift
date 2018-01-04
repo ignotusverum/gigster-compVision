@@ -118,8 +118,8 @@ class OnboardingViewController: UIViewController {
         /// Action button
         actionButton.snp.updateConstraints { maker in
             maker.centerX.equalTo(self.view)
-            maker.height.equalTo(24)
-            maker.width.equalTo(70)
+            maker.height.equalTo(40)
+            maker.width.equalTo(140)
             maker.top.equalTo(descriptionLabel.snp.bottom).offset(40)
         }
         
@@ -127,10 +127,16 @@ class OnboardingViewController: UIViewController {
         actionButton.layer.masksToBounds = true
         actionButton.layer.borderColor = UIColor.blue.cgColor
         actionButton.layer.borderWidth = 1
+        
+        actionButton.addTarget(self, action: #selector(onButton), for: .touchUpInside)
     }
     
     /// Utilities
     func onButtonAction(_ action: @escaping (()->())) {
         self.onAction = action
+    }
+    
+    @objc func onButton() {
+        onAction?()
     }
 }
