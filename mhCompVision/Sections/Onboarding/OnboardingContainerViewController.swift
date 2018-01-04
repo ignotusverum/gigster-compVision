@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import SnapKit
 import Foundation
 
 class OnboardingContainerViewController: UIViewController {
+    
+    var currentIndex = 0
     
     /// Page view controller
     lazy var pageVC: UIPageViewController = {
@@ -20,13 +23,129 @@ class OnboardingContainerViewController: UIViewController {
         return pageVC
     }()
     
+    /// Page control
+    lazy var pageControl: UIPageControl = {
+       
+        let pageControl = UIPageControl()
+        pageControl.pageIndicatorTintColor = UIColor.gray
+        pageControl.currentPageIndicatorTintColor = UIColor.blue
+        
+        return pageControl
+    }()
+    
+    fileprivate lazy var firstTutorialVC: OnboardingViewController = {
+       
+        let vc = OnboardingViewController(image: #imageLiteral(resourceName: "onboarding-1"), title: "THIRSTY?", description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui.", buttonTitle: "SKIP")
+        return vc
+    }()
+    
+    fileprivate lazy var secondTutorialVC: OnboardingViewController = {
+        
+        let vc = OnboardingViewController(image: #imageLiteral(resourceName: "onboarding-2"), title: "SCAN INGREDIENTS", description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui.", buttonTitle: "SKIP")
+        return vc
+    }()
+    
+    fileprivate lazy var thirdTutorialVC: OnboardingViewController = {
+        
+        let vc = OnboardingViewController(image: #imageLiteral(resourceName: "onboarding-3"), title: "BROWSE INGREDIENTS", description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui.", buttonTitle: "MAKE SOME DRINKS")
+        
+        return vc
+    }()
+    
+    /// Logo image
+    lazy var logoImageView: UIImageView = {
+        
+        let imageView = UIImageView()
+        imageView.image = #imageLiteral(resourceName: "onboarding-0")
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
     /// Datasource
     var controllers: [UIViewController] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /// Set page controller
+        addChildViewController(pageVC)
+        view.addSubview(pageVC.view)
         
+        pageVC.dataSource = self
+        
+        /// Page controller layout
+        pageVC.view.snp.updateConstraints { maker in
+            maker.top.bottom.left.right.equalTo(self.view)
+        }
+        
+        pageVC.didMove(toParentViewController: self)
+        
+        /// Adding logo
+        view.addSubview(logoImageView)
+        logoImageView.snp.updateConstraints { maker in
+            maker.left.equalTo(40)
+            maker.width.equalTo(60)
+            maker.height.equalTo(100)
+            maker.top.equalTo(self.view).offset(20)
+        }
+        
+        view.addSubview(pageControl)
+        pageControl.snp.updateConstraints { maker in
+            maker.bottom.equalToSuperview().offset(-30)
+            maker.left.right.equalToSuperview()
+            maker.height.equalTo(40)
+        }
+        
+        let appearance = UIPageControl.appearance()
+        appearance.pageIndicatorTintColor = UIColor.gray
+        appearance.currentPageIndicatorTintColor = UIColor.black
+        appearance.backgroundColor = UIColor.darkGray
+        
+        /// Update datasource
+        datasourceSetup()
+    }
+    
+    func datasourceSetup() {
+        
+        /// Handle actions
+        firstTutorialVC.onButtonAction { [weak self] in
+            self?.slideToPage(index: 1, completion: nil)
+        }
+        
+        secondTutorialVC.onButtonAction { [weak self] in
+            self?.slideToPage(index: 1, completion: nil)
+        }
+        
+        thirdTutorialVC.onButtonAction {
+            print("present login flow")
+        }
+        
+        /// Setup pageVC
+        controllers = [firstTutorialVC, secondTutorialVC, thirdTutorialVC]
+        pageVC.setViewControllers([controllers.first!], direction: .forward, animated: true, completion: nil)
+        
+        
+        /// Page control
+        pageControl.numberOfPages = controllers.count
+    }
+    
+    func slideToPage(index: Int, completion: (() -> Void)?) {
+        
+        if currentIndex < index {
+            
+            pageVC.setViewControllers([controllers[index]], direction: .forward, animated: true, completion: {[weak self] (complete: Bool) -> Void in
+                
+                self?.currentIndex = index
+                completion?()
+            })
+        }
+        else if currentIndex > index {
+            pageVC.setViewControllers([controllers[index]], direction: .reverse, animated: true, completion: {[weak self] (complete: Bool) -> Void in
+                
+                self?.currentIndex = index
+                completion?()
+            })
+        }
     }
 }
 
@@ -68,5 +187,21 @@ extension OnboardingContainerViewController: UIPageViewControllerDataSource {
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
         return 0
+    }
+}
+
+extension OnboardingContainerViewController: UIPageViewControllerDelegate {
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        
+        if completed {
+            
+            /// Safety check
+            guard let viewController = pageViewController.viewControllers?[0], let index = controllers.index(of: viewController) else {
+                return
+            }
+            
+            pageControl.currentPage = index
+        }
     }
 }

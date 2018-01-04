@@ -20,8 +20,8 @@ enum FontStyle: String {
 extension UIFont {
     
     /// Default font setup
-    static func defaultFont(style: FontStyle = .regular, size: CGFloat = 14)-> UIFont {
-        return UIFont(name: "\(style.rawValue.capitalizedFirst())", size: fontScalingSize(size))!
+    static func defaultFont(style: FontStyle = .tradeGothic, size: CGFloat = 14)-> UIFont {
+        return UIFont(name: "\(style.rawValue)", size: fontScalingSize(size))!
     }
     
     // MARK: - Scaling logic

@@ -15,6 +15,7 @@
 		BE72DBE71FF30A9E009F6381 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE72DBE61FF30A9E009F6381 /* AppDelegate.swift */; };
 		BE72DBEE1FF30A9F009F6381 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE72DBED1FF30A9F009F6381 /* Assets.xcassets */; };
 		BE72DBF11FF30A9F009F6381 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE72DBEF1FF30A9F009F6381 /* LaunchScreen.storyboard */; };
+		BEDA15431FFDA22200FF14E1 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA15421FFDA22200FF14E1 /* UIView.swift */; };
 		BEDDA40A1FFD9A5500B6D16D /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDDA4091FFD9A5500B6D16D /* Font.swift */; };
 		BEDDA40D1FFD9ABF00B6D16D /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDDA40C1FFD9ABF00B6D16D /* Device.swift */; };
 		F6B214B77A47876B70FFA441 /* Pods_mhCompVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A31B8DF7ABE77C20509E432 /* Pods_mhCompVision.framework */; };
@@ -34,6 +35,7 @@
 		BE72DBED1FF30A9F009F6381 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE72DBF01FF30A9F009F6381 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE72DBF21FF30A9F009F6381 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEDA15421FFDA22200FF14E1 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		BEDDA4091FFD9A5500B6D16D /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		BEDDA40C1FFD9ABF00B6D16D /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +80,7 @@
 		BE5BE7CD1FFC4C93009FA5CB /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				BEDA15411FFDA21B00FF14E1 /* View */,
 				BEDDA40B1FFD9AB800B6D16D /* Device */,
 				BEDDA4081FFD9A4F00B6D16D /* Extensions */,
 				BE5BE7CE1FFC4C98009FA5CB /* Fonts */,
@@ -124,6 +127,14 @@
 				BE72DBF21FF30A9F009F6381 /* Info.plist */,
 			);
 			path = mhCompVision;
+			sourceTree = "<group>";
+		};
+		BEDA15411FFDA21B00FF14E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BEDA15421FFDA22200FF14E1 /* UIView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		BEDDA4081FFD9A4F00B6D16D /* Extensions */ = {
@@ -306,6 +317,7 @@
 				BE72DBE71FF30A9E009F6381 /* AppDelegate.swift in Sources */,
 				BE5BE7CC1FFC4BB3009FA5CB /* OnboardingViewController.swift in Sources */,
 				BE5BE7CA1FFC48B9009FA5CB /* OnboardingContainerViewController.swift in Sources */,
+				BEDA15431FFDA22200FF14E1 /* UIView.swift in Sources */,
 				BEDDA40D1FFD9ABF00B6D16D /* Device.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
