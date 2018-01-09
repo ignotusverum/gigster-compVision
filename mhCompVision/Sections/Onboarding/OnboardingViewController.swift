@@ -33,7 +33,7 @@ class OnboardingViewController: UIViewController {
     lazy var actionButton: UIButton = {
        
         let button = UIButton()
-        button.setTitleColor(.blue, for: .normal)
+        button.setTitleColor(.defaultBlue, for: .normal)
         button.titleLabel?.font = UIFont.defaultFont(style: .tradeGothic, size: 10)
         return button
     }()
@@ -44,6 +44,7 @@ class OnboardingViewController: UIViewController {
         let label = UILabel()
         label.numberOfLines = 1
         label.textAlignment = .center
+        label.textColor = UIColor.textColor
         label.font = UIFont.defaultFont(style: .knockoutLiteweight, size: 40)
         return label
     }()
@@ -54,6 +55,7 @@ class OnboardingViewController: UIViewController {
         let label = UILabel()
         label.numberOfLines = 0
         label.textAlignment = .center
+        label.textColor = UIColor.textColor
         label.font = UIFont.defaultFont(style: .tradeGothic, size: 16)
         return label
     }()
@@ -138,13 +140,13 @@ class OnboardingViewController: UIViewController {
         
         actionButton.layer.cornerRadius = 8
         actionButton.layer.masksToBounds = true
-        actionButton.layer.borderColor = UIColor.blue.cgColor
+        actionButton.layer.borderColor = UIColor.defaultBlue.cgColor
         actionButton.layer.borderWidth = 1
         
         if useLargeButton {
             
             actionButton.setTitleColor(.white, for: .normal)
-            actionButton.setBackgroundColor(.blue, forState: .normal)
+            actionButton.setBackgroundColor(.defaultBlue, forState: .normal)
             
             actionButton.snp.updateConstraints { maker in
                 maker.centerX.equalTo(self.view)

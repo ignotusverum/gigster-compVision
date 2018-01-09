@@ -27,4 +27,12 @@ extension UIColor {
         }
         self.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
     }
+    
+    public static var textColor: UIColor {
+        return UIColor(hexString: "#384044")
+    }
+    
+    public static var defaultBlue: UIColor {
+        return UIColor(hexString: "#01a2ff")
+    }
 }

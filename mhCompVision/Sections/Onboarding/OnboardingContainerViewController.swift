@@ -29,7 +29,7 @@ class OnboardingContainerViewController: UIViewController {
         let pageControl = UIPageControl()
         
         pageControl.pageIndicatorTintColor = .gray
-        pageControl.currentPageIndicatorTintColor = .blue
+        pageControl.currentPageIndicatorTintColor = .defaultBlue
         
         return pageControl
     }()
