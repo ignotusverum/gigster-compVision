@@ -17,6 +17,8 @@ class OnboardingViewController: UIViewController {
     var titleString: String
     var descriptionString: String
     
+    var useLargeButton: Bool
+    
     /// Action handler
     private var onAction: (()->())?
     
@@ -56,12 +58,13 @@ class OnboardingViewController: UIViewController {
         return label
     }()
     
-    init(image: UIImage, title: String, description: String, buttonTitle: String) {
+    init(image: UIImage, title: String, description: String, buttonTitle: String, useLargeButton: Bool = false) {
         
         self.image = image
         self.titleString = title
         self.buttonTitle = buttonTitle
         self.descriptionString = description
+        self.useLargeButton = useLargeButton
         
         super.init(nibName: nil, bundle: nil)
 
@@ -137,6 +140,26 @@ class OnboardingViewController: UIViewController {
         actionButton.layer.masksToBounds = true
         actionButton.layer.borderColor = UIColor.blue.cgColor
         actionButton.layer.borderWidth = 1
+        
+        if useLargeButton {
+            
+            actionButton.setTitleColor(.white, for: .normal)
+            actionButton.setBackgroundColor(.blue, forState: .normal)
+            
+            actionButton.snp.updateConstraints { maker in
+                maker.centerX.equalTo(self.view)
+                maker.height.equalTo(50)
+                maker.width.equalTo(240)
+                maker.top.equalTo(descriptionLabel.snp.bottom).offset(40)
+            }
+        } else {
+            actionButton.snp.updateConstraints { maker in
+                maker.centerX.equalTo(self.view)
+                maker.height.equalTo(40)
+                maker.width.equalTo(70)
+                maker.top.equalTo(descriptionLabel.snp.bottom).offset(40)
+            }
+        }
         
         actionButton.addTarget(self, action: #selector(onButton), for: .touchUpInside)
     }

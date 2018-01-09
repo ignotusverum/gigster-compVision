@@ -48,7 +48,7 @@ class OnboardingContainerViewController: UIViewController {
     
     fileprivate lazy var thirdTutorialVC: OnboardingViewController = {
         
-        let vc = OnboardingViewController(image: #imageLiteral(resourceName: "onboarding-3"), title: "BROWSE INGREDIENTS", description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui.", buttonTitle: "MAKE SOME DRINKS")
+        let vc = OnboardingViewController(image: #imageLiteral(resourceName: "onboarding-3"), title: "BROWSE INGREDIENTS", description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui.", buttonTitle: "MAKE SOME DRINKS", useLargeButton: true)
         
         return vc
     }()
