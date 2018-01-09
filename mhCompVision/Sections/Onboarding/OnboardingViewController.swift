@@ -90,6 +90,16 @@ class OnboardingViewController: UIViewController {
     /// Setup UI
     func setupUI() {
         
+        let gradient: CAGradientLayer = CAGradientLayer()
+        
+        gradient.colors = [UIColor(hexString: "17EAD9").cgColor, UIColor(hexString: "6078EA").cgColor]
+        gradient.locations = [0.0 , 1.0]
+        gradient.startPoint = CGPoint(x: 0.0, y: 1.0)
+        gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
+        gradient.frame = CGRect(x: 0.0, y: 0.0, width: view.frame.size.width, height: view.frame.size.height)
+        
+        view.layer.insertSublayer(gradient, at: 0)
+        
         view.addSubviews([backgroundImage, titleLabel, descriptionLabel, actionButton])
         
         /// Background image

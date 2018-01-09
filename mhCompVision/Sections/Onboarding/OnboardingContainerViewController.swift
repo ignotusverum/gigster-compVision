@@ -52,16 +52,7 @@ class OnboardingContainerViewController: UIViewController {
         
         return vc
     }()
-    
-    /// Logo image
-    lazy var logoImageView: UIImageView = {
-        
-        let imageView = UIImageView()
-        imageView.image = #imageLiteral(resourceName: "onboarding-0")
-        imageView.contentMode = .scaleAspectFit
-        return imageView
-    }()
-    
+
     /// Datasource
     var controllers: [UIViewController] = []
     
@@ -81,15 +72,6 @@ class OnboardingContainerViewController: UIViewController {
         }
         
         pageVC.didMove(toParentViewController: self)
-        
-        /// Adding logo
-        view.addSubview(logoImageView)
-        logoImageView.snp.updateConstraints { maker in
-            maker.left.equalTo(40)
-            maker.width.equalTo(60)
-            maker.height.equalTo(100)
-            maker.top.equalTo(self.view).offset(20)
-        }
         
         view.addSubview(pageControl)
         pageControl.snp.updateConstraints { maker in
