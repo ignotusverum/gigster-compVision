@@ -17,6 +17,8 @@
 		BE72DBF11FF30A9F009F6381 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE72DBEF1FF30A9F009F6381 /* LaunchScreen.storyboard */; };
 		BE793E1C20043CF9002AA018 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE793E1B20043CF9002AA018 /* Color.swift */; };
 		BE793E1F20043F96002AA018 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE793E1E20043F96002AA018 /* UIButton.swift */; };
+		BEB6E63A2005A12F00516694 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB6E6392005A12F00516694 /* MainViewController.swift */; };
+		BEB6E63D2005A71D00516694 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB6E63C2005A71D00516694 /* String.swift */; };
 		BEDA15431FFDA22200FF14E1 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA15421FFDA22200FF14E1 /* UIView.swift */; };
 		BEDDA40A1FFD9A5500B6D16D /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDDA4091FFD9A5500B6D16D /* Font.swift */; };
 		BEDDA40D1FFD9ABF00B6D16D /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDDA40C1FFD9ABF00B6D16D /* Device.swift */; };
@@ -39,6 +41,8 @@
 		BE72DBF21FF30A9F009F6381 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE793E1B20043CF9002AA018 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		BE793E1E20043F96002AA018 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		BEB6E6392005A12F00516694 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		BEB6E63C2005A71D00516694 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		BEDA15421FFDA22200FF14E1 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		BEDDA4091FFD9A5500B6D16D /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		BEDDA40C1FFD9ABF00B6D16D /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
@@ -67,6 +71,7 @@
 		BE5BE7C71FFC48A1009FA5CB /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				BEB6E6382005A11F00516694 /* Main */,
 				BE5BE7C81FFC48B0009FA5CB /* Onboarding */,
 			);
 			path = Sections;
@@ -84,6 +89,7 @@
 		BE5BE7CD1FFC4C93009FA5CB /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				BEB6E63B2005A71600516694 /* String */,
 				BE793E1D20043F8F002AA018 /* Button */,
 				BE793E1A20043CF1002AA018 /* Color */,
 				BEDA15411FFDA21B00FF14E1 /* View */,
@@ -149,6 +155,22 @@
 				BE793E1E20043F96002AA018 /* UIButton.swift */,
 			);
 			path = Button;
+			sourceTree = "<group>";
+		};
+		BEB6E6382005A11F00516694 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				BEB6E6392005A12F00516694 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		BEB6E63B2005A71600516694 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				BEB6E63C2005A71D00516694 /* String.swift */,
+			);
+			path = String;
 			sourceTree = "<group>";
 		};
 		BEDA15411FFDA21B00FF14E1 /* View */ = {
@@ -337,10 +359,12 @@
 			files = (
 				BEDDA40A1FFD9A5500B6D16D /* Font.swift in Sources */,
 				BE72DBE71FF30A9E009F6381 /* AppDelegate.swift in Sources */,
+				BEB6E63D2005A71D00516694 /* String.swift in Sources */,
 				BE793E1C20043CF9002AA018 /* Color.swift in Sources */,
 				BE793E1F20043F96002AA018 /* UIButton.swift in Sources */,
 				BE5BE7CC1FFC4BB3009FA5CB /* OnboardingViewController.swift in Sources */,
 				BE5BE7CA1FFC48B9009FA5CB /* OnboardingContainerViewController.swift in Sources */,
+				BEB6E63A2005A12F00516694 /* MainViewController.swift in Sources */,
 				BEDA15431FFDA22200FF14E1 /* UIView.swift in Sources */,
 				BEDDA40D1FFD9ABF00B6D16D /* Device.swift in Sources */,
 			);
