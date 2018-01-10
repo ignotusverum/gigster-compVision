@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import Foundation
-
 import StoreKit
+import Foundation
 
 enum TabTitles: String, CustomStringConvertible {
     case list
@@ -85,15 +84,6 @@ class MainViewController: UITabBarController {
         
         /// Setup tabbar
         setupTabBar()
-        
-        // get current number of times app has been launched
-        let currentCount = UserDefaults.standard.integer(forKey: "launchCount")
-        
-        if currentCount > 3 {
-            if #available(iOS 10.3, *) {
-                //                SKStoreReviewController.requestReview()
-            }
-        }
     }
     
     // MARK: - Utilities
