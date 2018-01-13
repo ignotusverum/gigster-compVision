@@ -98,15 +98,15 @@ class OnboardingContainerViewController: UIViewController {
         
         /// Handle actions
         firstTutorialVC.onButtonAction { [unowned self] in
-            self.transitionToMain()
+            self.transitionToTutorial()
         }
         
         secondTutorialVC.onButtonAction { [unowned self] in
-            self.transitionToMain()
+            self.transitionToTutorial()
         }
         
         thirdTutorialVC.onButtonAction { [unowned self] in
-            self.transitionToMain()
+            self.transitionToTutorial()
         }
         
         /// Setup pageVC
@@ -139,8 +139,18 @@ class OnboardingContainerViewController: UIViewController {
         }
     }
     
-    func transitionToMain() {
-        AppDelegate.shared.window?.rootViewController = MainViewController()
+    func transitionToTutorial() {
+        
+        let secondVC = TutorialViewController(title: "SCANNING FRUITS & VEGERABLES CAN BE TRICKY. BE SURE TO ADJUST YOUR CAMERA DISTANCE.", image: #imageLiteral(resourceName: "Tutorial_2")) {
+         
+            AppDelegate.shared.window?.rootViewController = MainViewController()
+        }
+        
+        let firstVC = TutorialViewController(title: "BE SURE TO FILL THE SCREEN WITH THE LABEL TEXT", image: #imageLiteral(resourceName: "Tutorial_1")) {
+            AppDelegate.shared.window?.rootViewController = secondVC
+        }
+        
+        AppDelegate.shared.window?.rootViewController = firstVC
     }
 }
 

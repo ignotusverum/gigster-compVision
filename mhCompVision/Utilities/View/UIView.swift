@@ -13,4 +13,10 @@ extension UIView {
     func addSubviews(_ views: [UIView]) {
         views.forEach { addSubview($0) }
     }
+    
+    func makeRound() {
+        
+        layer.cornerRadius = frame.width / 2
+        clipsToBounds = true
+    }
 }

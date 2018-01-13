@@ -157,26 +157,17 @@ class CameraViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         /// Layer updates
-        flashButton.layer.cornerRadius = flashButton.frame.width / 2
-        galleryButton.layer.cornerRadius = galleryButton.frame.width / 2
+        imageView.makeRound()
+        cameraView.makeRound()
+        flashButton.makeRound()
+        recordButton.makeRound()
+        galleryButton.makeRound()
         
         galleryButton.layer.borderColor = UIColor.black.cgColor
         galleryButton.layer.borderWidth = 1
         
         flashButton.layer.borderColor = UIColor.black.cgColor
         flashButton.layer.borderWidth = 1
-        
-        flashButton.clipsToBounds = true
-        galleryButton.clipsToBounds = true
-        
-        imageView.layer.cornerRadius = imageView.frame.width / 2
-        imageView.clipsToBounds = true
-        
-        cameraView.layer.cornerRadius = cameraView.frame.width / 2
-        cameraView.layer.masksToBounds = true
-        
-        recordButton.layer.cornerRadius = recordButton.frame.width / 2
-        recordButton.layer.masksToBounds = true
     }
     
     // MARK: Actions
@@ -226,12 +217,23 @@ class CameraViewController: UIViewController {
         let cloudinary = CLDCloudinary(configuration: config)
         let params = CLDUploadRequestParams()
         
-        cloudinary.createUploader().upload(data: data, uploadPreset: "", params: params, progress: { (progress) in
+        imageView.isHidden = true
+        recordButton.isHidden = true
+        galleryButton.isHidden = true
+        
+        let oldTitle = titleLabel.attributedText
+        
+        titleLabel.text = "Scanning..."
+        
+        cloudinary.createUploader().upload(data: data, uploadPreset: "vejjcwwj", params: params, progress: { (progress) in
             print(progress)
         }) { (result, error) in
             self.imageView.isHidden = true
-            print(error)
-            print(result)
+            self.imageView.isHidden = false
+            self.recordButton.isHidden = false
+            self.galleryButton.isHidden = false
+            
+            self.titleLabel.attributedText = oldTitle
         }
     }
 }

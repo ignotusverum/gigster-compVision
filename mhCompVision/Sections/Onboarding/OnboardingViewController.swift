@@ -163,7 +163,8 @@ class OnboardingViewController: UIViewController {
         self.onAction = action
     }
     
-    @objc func onButton() {
+    @objc
+    func onButton() {
         onAction?()
     }
 }
