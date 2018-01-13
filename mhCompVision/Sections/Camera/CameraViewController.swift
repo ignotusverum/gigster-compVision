@@ -217,7 +217,7 @@ class CameraViewController: UIViewController {
         let cloudinary = CLDCloudinary(configuration: config)
         let params = CLDUploadRequestParams()
         
-        imageView.isHidden = true
+        flashButton.isHidden = true
         recordButton.isHidden = true
         galleryButton.isHidden = true
         
@@ -227,13 +227,13 @@ class CameraViewController: UIViewController {
         paragraph.lineSpacing = 5
         paragraph.alignment = .center
         
-        titleLabel.attributedText = NSAttributedString(string: "Scanning.", attributes: [NSAttributedStringKey.font: UIFont.defaultFont(style: .knockoutLiteweight, size: 30), NSAttributedStringKey.paragraphStyle: paragraph])
+        titleLabel.attributedText = NSAttributedString(string: "Scanning...", attributes: [NSAttributedStringKey.font: UIFont.defaultFont(style: .knockoutLiteweight, size: 30), NSAttributedStringKey.paragraphStyle: paragraph])
         
         cloudinary.createUploader().upload(data: data, uploadPreset: "vejjcwwj", params: params, progress: { (progress) in
             print(progress)
         }) { (result, error) in
             self.imageView.isHidden = true
-            self.imageView.isHidden = false
+            self.flashButton.isHidden = false
             self.recordButton.isHidden = false
             self.galleryButton.isHidden = false
             
