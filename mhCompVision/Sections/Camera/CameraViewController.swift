@@ -9,6 +9,7 @@
 import UIKit
 import AVKit
 import Foundation
+import Cloudinary
 
 class CameraViewController: UIViewController {
     
@@ -194,6 +195,24 @@ class CameraViewController: UIViewController {
             }
         }
     }
+    
+    func upload(_ data: Data) {
+        
+        guard let config = CLDConfiguration(cloudinaryUrl: "cloudinary://529747486124982:OeIXquTS7plUiErE4ygq6YTJdtA@hqhuesdz6") else {
+            print("error")
+            return
+        }
+        
+        let cloudinary = CLDCloudinary(configuration: config)
+        let params = CLDUploadRequestParams()
+        
+        cloudinary.createUploader().upload(data: data, uploadPreset: "", params: params, progress: { (progress) in
+            print(progress)
+        }) { (result, error) in
+            print(error)
+            print(result)
+        }
+    }
 }
 
 // MARK: ImagePickerController delegate
@@ -207,6 +226,11 @@ extension CameraViewController: UIImagePickerControllerDelegate, UINavigationCon
                 return
             }
             
+            guard let data = UIImageJPEGRepresentation(image, 0.5) else {
+                return
+            }
+            
+            self.upload(data)
         }
     }
 }
@@ -214,5 +238,10 @@ extension CameraViewController: UIImagePickerControllerDelegate, UINavigationCon
 extension CameraViewController: CameraViewDelegate {
     func cameraView(_ cameraView: CameraView, imageOutput image: UIImage) {
         
+        guard let data = UIImageJPEGRepresentation(image, 0.5) else {
+            return
+        }
+        
+        upload(data)
     }
 }
