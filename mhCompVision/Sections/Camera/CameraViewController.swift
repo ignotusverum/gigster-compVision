@@ -107,21 +107,21 @@ class CameraViewController: UIViewController {
             maker.right.equalToSuperview().offset(-30)
         }
         
-        /// Preview image
-        view.addSubview(imageView)
-        imageView.isHighlighted = true
-        imageView.snp.makeConstraints { [unowned self] maker in
+        /// Camera view layout
+        view.addSubview(cameraView)
+        cameraView.delegate = self
+        cameraView.backgroundColor = .red
+        cameraView.snp.makeConstraints { [unowned self] maker in
             maker.left.equalToSuperview().offset(40)
             maker.right.equalToSuperview().offset(-40)
             maker.height.equalTo(self.view.frame.width - 80)
             maker.bottom.equalToSuperview().offset(-200)
         }
         
-        /// Camera view layout
-        view.addSubview(cameraView)
-        cameraView.delegate = self
-        cameraView.backgroundColor = .red
-        cameraView.snp.makeConstraints { [unowned self] maker in
+        /// Preview image
+        view.addSubview(imageView)
+        imageView.isHighlighted = true
+        imageView.snp.makeConstraints { [unowned self] maker in
             maker.left.equalToSuperview().offset(40)
             maker.right.equalToSuperview().offset(-40)
             maker.height.equalTo(self.view.frame.width - 80)
@@ -229,7 +229,7 @@ class CameraViewController: UIViewController {
         cloudinary.createUploader().upload(data: data, uploadPreset: "", params: params, progress: { (progress) in
             print(progress)
         }) { (result, error) in
-            self.imageView.isHidden = false
+            self.imageView.isHidden = true
             print(error)
             print(result)
         }
