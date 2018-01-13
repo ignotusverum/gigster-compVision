@@ -223,7 +223,11 @@ class CameraViewController: UIViewController {
         
         let oldTitle = titleLabel.attributedText
         
-        titleLabel.text = "Scanning..."
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.lineSpacing = 5
+        paragraph.alignment = .center
+        
+        titleLabel.attributedText = NSAttributedString(string: "Scanning.", attributes: [NSAttributedStringKey.font: UIFont.defaultFont(style: .knockoutLiteweight, size: 30), NSAttributedStringKey.paragraphStyle: paragraph])
         
         cloudinary.createUploader().upload(data: data, uploadPreset: "vejjcwwj", params: params, progress: { (progress) in
             print(progress)
