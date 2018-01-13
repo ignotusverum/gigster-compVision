@@ -35,15 +35,16 @@ class MainViewController: UITabBarController {
         let vc = UIViewController()
         vc.view.backgroundColor = UIColor.black
         let timelineNavigation = UINavigationController(rootViewController: vc)
+        timelineNavigation.navigationBar.isTranslucent = false
         
         return timelineNavigation
     }()
     
     lazy var cameraFlow: UINavigationController = {
         
-        let vc = UIViewController()
-        vc.view.backgroundColor = UIColor.yellow
+        let vc = CameraViewController()
         let cameraNavigation = UINavigationController(rootViewController: vc)
+        cameraNavigation.navigationBar.isTranslucent = false
         
         return cameraNavigation
     }()
@@ -53,6 +54,7 @@ class MainViewController: UITabBarController {
         let vc = UIViewController()
         vc.view.backgroundColor = UIColor.green
         let notificationsNavigation = UINavigationController(rootViewController: vc)
+        notificationsNavigation.navigationBar.isTranslucent = false
         
         return notificationsNavigation
     }()
@@ -81,6 +83,8 @@ class MainViewController: UITabBarController {
         
         /// Init controllers
         viewControllers = controllers
+        
+        selectedIndex = 1
         
         /// Setup tabbar
         setupTabBar()

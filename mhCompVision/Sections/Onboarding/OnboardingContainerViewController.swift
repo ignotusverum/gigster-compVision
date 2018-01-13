@@ -59,6 +59,16 @@ class OnboardingContainerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let gradient: CAGradientLayer = CAGradientLayer()
+        
+        gradient.colors = [UIColor(hexString: "17EAD9").withAlphaComponent(0.3).cgColor, UIColor(hexString: "6078EA").withAlphaComponent(0.3).cgColor]
+        gradient.locations = [0.0 , 1.0]
+        gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradient.endPoint = CGPoint(x: 1.0, y: 0.1)
+        gradient.frame = CGRect(x: 0.0, y: 0.0, width: view.frame.size.width, height: view.frame.size.height)
+        
+        pageVC.view.layer.insertSublayer(gradient, at: 0)
+        
         /// Set page controller
         addChildViewController(pageVC)
         view.addSubview(pageVC.view)
@@ -87,16 +97,16 @@ class OnboardingContainerViewController: UIViewController {
     func datasourceSetup() {
         
         /// Handle actions
-        firstTutorialVC.onButtonAction { [weak self] in
-            self?.slideToPage(index: 1, completion: nil)
+        firstTutorialVC.onButtonAction { [unowned self] in
+            self.transitionToMain()
         }
         
-        secondTutorialVC.onButtonAction { [weak self] in
-            self?.slideToPage(index: 2, completion: nil)
+        secondTutorialVC.onButtonAction { [unowned self] in
+            self.transitionToMain()
         }
         
-        thirdTutorialVC.onButtonAction {
-            print("present login flow")
+        thirdTutorialVC.onButtonAction { [unowned self] in
+            self.transitionToMain()
         }
         
         /// Setup pageVC
@@ -127,6 +137,10 @@ class OnboardingContainerViewController: UIViewController {
                 completion?()
             })
         }
+    }
+    
+    func transitionToMain() {
+        AppDelegate.shared.window?.rootViewController = MainViewController()
     }
 }
 

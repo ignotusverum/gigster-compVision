@@ -22,6 +22,9 @@
 		BEDA15431FFDA22200FF14E1 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA15421FFDA22200FF14E1 /* UIView.swift */; };
 		BEDDA40A1FFD9A5500B6D16D /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDDA4091FFD9A5500B6D16D /* Font.swift */; };
 		BEDDA40D1FFD9ABF00B6D16D /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDDA40C1FFD9ABF00B6D16D /* Device.swift */; };
+		BEFAB84020098C4B00520538 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFAB83F20098C4B00520538 /* CameraViewController.swift */; };
+		BEFAB84520098E1A00520538 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFAB84420098E1A00520538 /* CameraView.swift */; };
+		BEFAB848200992E800520538 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFAB847200992E800520538 /* EmptyView.swift */; };
 		F6B214B77A47876B70FFA441 /* Pods_mhCompVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A31B8DF7ABE77C20509E432 /* Pods_mhCompVision.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +49,9 @@
 		BEDA15421FFDA22200FF14E1 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		BEDDA4091FFD9A5500B6D16D /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		BEDDA40C1FFD9ABF00B6D16D /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		BEFAB83F20098C4B00520538 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		BEFAB84420098E1A00520538 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		BEFAB847200992E800520538 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +77,7 @@
 		BE5BE7C71FFC48A1009FA5CB /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				BEFAB83E20098C4000520538 /* Camera */,
 				BEB6E6382005A11F00516694 /* Main */,
 				BE5BE7C81FFC48B0009FA5CB /* Onboarding */,
 			);
@@ -131,6 +138,7 @@
 		BE72DBE51FF30A9E009F6381 /* mhCompVision */ = {
 			isa = PBXGroup;
 			children = (
+				BEFAB84220098E0600520538 /* Custom UI */,
 				BE5BE7CD1FFC4C93009FA5CB /* Utilities */,
 				BE72DBE61FF30A9E009F6381 /* AppDelegate.swift */,
 				BE5BE7C71FFC48A1009FA5CB /* Sections */,
@@ -195,6 +203,39 @@
 				BEDDA40C1FFD9ABF00B6D16D /* Device.swift */,
 			);
 			path = Device;
+			sourceTree = "<group>";
+		};
+		BEFAB83E20098C4000520538 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				BEFAB83F20098C4B00520538 /* CameraViewController.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		BEFAB84220098E0600520538 /* Custom UI */ = {
+			isa = PBXGroup;
+			children = (
+				BEFAB846200992E100520538 /* EmptyView */,
+				BEFAB84320098E1200520538 /* CameraView */,
+			);
+			path = "Custom UI";
+			sourceTree = "<group>";
+		};
+		BEFAB84320098E1200520538 /* CameraView */ = {
+			isa = PBXGroup;
+			children = (
+				BEFAB84420098E1A00520538 /* CameraView.swift */,
+			);
+			path = CameraView;
+			sourceTree = "<group>";
+		};
+		BEFAB846200992E100520538 /* EmptyView */ = {
+			isa = PBXGroup;
+			children = (
+				BEFAB847200992E800520538 /* EmptyView.swift */,
+			);
+			path = EmptyView;
 			sourceTree = "<group>";
 		};
 		FDD73CEEA1C22529F53B3CD5 /* Pods */ = {
@@ -357,8 +398,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEFAB84020098C4B00520538 /* CameraViewController.swift in Sources */,
+				BEFAB848200992E800520538 /* EmptyView.swift in Sources */,
 				BEDDA40A1FFD9A5500B6D16D /* Font.swift in Sources */,
 				BE72DBE71FF30A9E009F6381 /* AppDelegate.swift in Sources */,
+				BEFAB84520098E1A00520538 /* CameraView.swift in Sources */,
 				BEB6E63D2005A71D00516694 /* String.swift in Sources */,
 				BE793E1C20043CF9002AA018 /* Color.swift in Sources */,
 				BE793E1F20043F96002AA018 /* UIButton.swift in Sources */,

@@ -8,10 +8,15 @@
 
 import UIKit
 
+let AppWakeNotificationKey = "AppWakeNotificationKey"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    /// Shared
+    static let shared = UIApplication.shared.delegate as! AppDelegate
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -21,6 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = OnboardingContainerViewController()
         
         return true
+    }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        NotificationCenter.default.post(name: Notification.Name(rawValue: AppWakeNotificationKey), object: nil)
     }
 }
 
