@@ -11,37 +11,10 @@ def shared_pods
     # who cares about warnings
     inhibit_all_warnings!
     
-    # Transition Animation
-    pod 'Hero'
-    
-    # Defaults
-    pod 'Locksmith'
-    
-    # Photo viewer
-    pod 'SKPhotoBrowser'
-    
-    # Networking
-    pod 'Alamofire'
-    pod 'ReachabilitySwift', '~> 3'
-    
-    # Progress
-    pod 'SVProgressHUD'
-    
-    # Keychain
-    pod 'Locksmith'
-    pod 'KeychainAccess'
-    
-    # Parsers
-    pod 'SwiftyJSON'
-    
     # Layout
     pod 'SnapKit'
     
-    #Image fetching
-    pod 'Kingfisher'
-    
-    # Utilities
-    pod 'PromiseKit'
+    pod 'Cloudinary'
 end
 
 target 'mhCompVision' do
