@@ -18,6 +18,13 @@ class CameraViewController: UIViewController {
     /// Empty view for camera permissions
     lazy var emptyView: EmptyView = EmptyView(title: "Please check your camera permissions in settings")
     
+    lazy var imageView: UIImageView = {
+       
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
     lazy var titleLabel: UILabel = {
         
         let label = UILabel()
@@ -100,6 +107,16 @@ class CameraViewController: UIViewController {
             maker.right.equalToSuperview().offset(-30)
         }
         
+        /// Preview image
+        view.addSubview(imageView)
+        imageView.isHighlighted = true
+        imageView.snp.makeConstraints { [unowned self] maker in
+            maker.left.equalToSuperview().offset(40)
+            maker.right.equalToSuperview().offset(-40)
+            maker.height.equalTo(self.view.frame.width - 80)
+            maker.bottom.equalToSuperview().offset(-200)
+        }
+        
         /// Camera view layout
         view.addSubview(cameraView)
         cameraView.delegate = self
@@ -151,6 +168,9 @@ class CameraViewController: UIViewController {
         
         flashButton.clipsToBounds = true
         galleryButton.clipsToBounds = true
+        
+        imageView.layer.cornerRadius = imageView.frame.width / 2
+        imageView.clipsToBounds = true
         
         cameraView.layer.cornerRadius = cameraView.frame.width / 2
         cameraView.layer.masksToBounds = true
@@ -209,6 +229,7 @@ class CameraViewController: UIViewController {
         cloudinary.createUploader().upload(data: data, uploadPreset: "", params: params, progress: { (progress) in
             print(progress)
         }) { (result, error) in
+            self.imageView.isHidden = false
             print(error)
             print(result)
         }
@@ -230,6 +251,9 @@ extension CameraViewController: UIImagePickerControllerDelegate, UINavigationCon
                 return
             }
             
+            self.imageView.isHidden = false
+            self.imageView.image = image
+            
             self.upload(data)
         }
     }
@@ -241,6 +265,9 @@ extension CameraViewController: CameraViewDelegate {
         guard let data = UIImageJPEGRepresentation(image, 0.5) else {
             return
         }
+        
+        imageView.isHidden = false
+        imageView.image = image
         
         upload(data)
     }
