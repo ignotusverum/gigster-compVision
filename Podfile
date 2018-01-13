@@ -11,6 +11,8 @@ def shared_pods
     # who cares about warnings
     inhibit_all_warnings!
     
+    pod 'Hero'
+    
     # Layout
     pod 'SnapKit'
     

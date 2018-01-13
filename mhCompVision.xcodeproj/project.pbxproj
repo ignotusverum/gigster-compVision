@@ -26,6 +26,8 @@
 		BEFAB84520098E1A00520538 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFAB84420098E1A00520538 /* CameraView.swift */; };
 		BEFAB848200992E800520538 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFAB847200992E800520538 /* EmptyView.swift */; };
 		BEFAB84B2009A96400520538 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFAB84A2009A96400520538 /* TutorialViewController.swift */; };
+		BEFAB84E2009B1C300520538 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFAB84D2009B1C300520538 /* ConfirmationViewController.swift */; };
+		BEFAB8512009B5D400520538 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFAB8502009B5D400520538 /* ViewController.swift */; };
 		F6B214B77A47876B70FFA441 /* Pods_mhCompVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A31B8DF7ABE77C20509E432 /* Pods_mhCompVision.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +56,8 @@
 		BEFAB84420098E1A00520538 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		BEFAB847200992E800520538 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		BEFAB84A2009A96400520538 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		BEFAB84D2009B1C300520538 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
+		BEFAB8502009B5D400520538 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 		BE5BE7C71FFC48A1009FA5CB /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				BEFAB84C2009B1B900520538 /* Confirmation */,
 				BEFAB8492009A94300520538 /* Tutorial */,
 				BEFAB83E20098C4000520538 /* Camera */,
 				BEB6E6382005A11F00516694 /* Main */,
@@ -99,6 +104,7 @@
 		BE5BE7CD1FFC4C93009FA5CB /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				BEFAB84F2009B5CA00520538 /* ViewController */,
 				BEB6E63B2005A71600516694 /* String */,
 				BE793E1D20043F8F002AA018 /* Button */,
 				BE793E1A20043CF1002AA018 /* Color */,
@@ -247,6 +253,22 @@
 				BEFAB84A2009A96400520538 /* TutorialViewController.swift */,
 			);
 			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		BEFAB84C2009B1B900520538 /* Confirmation */ = {
+			isa = PBXGroup;
+			children = (
+				BEFAB84D2009B1C300520538 /* ConfirmationViewController.swift */,
+			);
+			path = Confirmation;
+			sourceTree = "<group>";
+		};
+		BEFAB84F2009B5CA00520538 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BEFAB8502009B5D400520538 /* ViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		FDD73CEEA1C22529F53B3CD5 /* Pods */ = {
@@ -402,10 +424,12 @@
 				BE793E1C20043CF9002AA018 /* Color.swift in Sources */,
 				BE793E1F20043F96002AA018 /* UIButton.swift in Sources */,
 				BEFAB84B2009A96400520538 /* TutorialViewController.swift in Sources */,
+				BEFAB84E2009B1C300520538 /* ConfirmationViewController.swift in Sources */,
 				BE5BE7CC1FFC4BB3009FA5CB /* OnboardingViewController.swift in Sources */,
 				BE5BE7CA1FFC48B9009FA5CB /* OnboardingContainerViewController.swift in Sources */,
 				BEB6E63A2005A12F00516694 /* MainViewController.swift in Sources */,
 				BEDA15431FFDA22200FF14E1 /* UIView.swift in Sources */,
+				BEFAB8512009B5D400520538 /* ViewController.swift in Sources */,
 				BEDDA40D1FFD9ABF00B6D16D /* Device.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

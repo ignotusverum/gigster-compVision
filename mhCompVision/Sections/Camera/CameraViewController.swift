@@ -238,6 +238,8 @@ class CameraViewController: UIViewController {
             self.galleryButton.isHidden = false
             
             self.titleLabel.attributedText = oldTitle
+            
+            self.navigationController?.pushViewController(ConfirmationViewController(), animated: true)
         }
     }
 }
