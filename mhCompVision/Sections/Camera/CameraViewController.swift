@@ -63,6 +63,9 @@ class CameraViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+
         layoutSetup()
         
         AVCaptureDevice.requestAccess(for: AVMediaType.video) { [unowned self] response in
@@ -81,9 +84,22 @@ class CameraViewController: UIViewController {
     
     private func layoutSetup() {
         
-        view.backgroundColor = .black
+        view.backgroundColor = .white
         
-        /// QR reader view layout
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.lineSpacing = 5
+        paragraph.alignment = .center
+        
+        titleLabel.attributedText = NSAttributedString(string: "SCAN A FRUIT, VEGGIE OR BEVERAGE LABEL.", attributes: [NSAttributedStringKey.font: UIFont.defaultFont(style: .knockoutLiteweight, size: 30), NSAttributedStringKey.paragraphStyle: paragraph])
+        
+        view.addSubview(titleLabel)
+        titleLabel.snp.updateConstraints { maker in
+            maker.top.equalToSuperview().offset(20)
+            maker.left.equalToSuperview().offset(30)
+            maker.right.equalToSuperview().offset(-30)
+        }
+        
+        /// Camera view layout
         view.addSubview(cameraView)
         cameraView.delegate = self
         cameraView.backgroundColor = .red
@@ -125,6 +141,12 @@ class CameraViewController: UIViewController {
         /// Layer updates
         flashButton.layer.cornerRadius = flashButton.frame.width / 2
         galleryButton.layer.cornerRadius = galleryButton.frame.width / 2
+        
+        galleryButton.layer.borderColor = UIColor.black.cgColor
+        galleryButton.layer.borderWidth = 1
+        
+        flashButton.layer.borderColor = UIColor.black.cgColor
+        flashButton.layer.borderWidth = 1
         
         flashButton.clipsToBounds = true
         galleryButton.clipsToBounds = true
