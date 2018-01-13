@@ -21,7 +21,7 @@ class CameraViewController: UIViewController {
     lazy var imageView: UIImageView = {
        
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
