@@ -81,7 +81,7 @@ class ConfirmationViewController: UIViewController {
         paragraph.lineSpacing = 5
         paragraph.alignment = .center
         
-        titleLabel.attributedText = NSAttributedString(string: "Is this an orange?".uppercased(), attributes: [NSAttributedStringKey.font: UIFont.defaultFont(style: .knockoutLiteweight, size: 30), NSAttributedStringKey.paragraphStyle: paragraph])
+        titleLabel.attributedText = NSAttributedString(string: "Is this an orange?".uppercased(), attributes: [NSAttributedStringKey.font: UIFont.defaultFont(style: .knockoutLiteweight, size: 20), NSAttributedStringKey.paragraphStyle: paragraph])
         
         titleLabel.snp.updateConstraints { maker in
             maker.top.equalTo(imageView.snp.bottom).offset(120)

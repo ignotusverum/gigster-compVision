@@ -293,6 +293,7 @@
 				BE72DBE11FF30A9E009F6381 /* Resources */,
 				CF609E7321129BAF0A6A1974 /* [CP] Embed Pods Frameworks */,
 				4AFF28BE01C3A1A3A3481FB9 /* [CP] Copy Pods Resources */,
+				BEFAB852200ABF2B00520538 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -386,6 +387,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mhCompVision/Pods-mhCompVision-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		BEFAB852200ABF2B00520538 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" dde7485bbb19e5dcf6883f0fd77ce6ca29dc0e33 ebbad3bc77e32ffce228150afd10265134e3cee7d52d3dc5e7167c4230466f2b";
+		};
 		CF609E7321129BAF0A6A1974 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -395,12 +409,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-mhCompVision/Pods-mhCompVision-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Cloudinary/Cloudinary.framework",
+				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cloudinary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -565,7 +581,7 @@
 				INFOPLIST_FILE = mhCompVision/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = gigster.mhCompVision;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gigster.mhCompvision;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -582,7 +598,7 @@
 				INFOPLIST_FILE = mhCompVision/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = gigster.mhCompVision;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gigster.mhCompvision;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

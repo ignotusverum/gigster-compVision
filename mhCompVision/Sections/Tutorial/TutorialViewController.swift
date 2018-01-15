@@ -73,19 +73,20 @@ class TutorialViewController: UIViewController {
         paragraph.lineSpacing = 5
         paragraph.alignment = .center
         
-        titleLabel.attributedText = NSAttributedString(string: titleString, attributes: [NSAttributedStringKey.font: UIFont.defaultFont(style: .knockoutLiteweight, size: 30), NSAttributedStringKey.paragraphStyle: paragraph])
+        titleLabel.attributedText = NSAttributedString(string: titleString, attributes: [NSAttributedStringKey.font: UIFont.defaultFont(style: .knockoutLiteweight, size: 20), NSAttributedStringKey.paragraphStyle: paragraph])
 
         view.addSubviews([titleLabel, actionButton, imageView])
         
+        let topCheck = UIDevice.current.iPhoneX ? 80 : 30
         titleLabel.snp.updateConstraints { maker in
-            maker.top.equalToSuperview().offset(80)
+            maker.top.equalToSuperview().offset(topCheck)
             maker.left.equalToSuperview().offset(30)
             maker.right.equalToSuperview().offset(-30)
         }
         
         imageView.image = image
         imageView.snp.updateConstraints { maker in
-            maker.top.equalTo(titleLabel.snp.bottom).offset(40)
+            maker.top.equalTo(titleLabel.snp.bottom).offset(80)
             maker.left.equalToSuperview().offset(40)
             maker.right.equalToSuperview().offset(-40)
             maker.bottom.equalTo(actionButton.snp.top).offset(-80)
@@ -93,10 +94,11 @@ class TutorialViewController: UIViewController {
         
         /// Action button
         actionButton.snp.updateConstraints { maker in
+            maker.top.equalTo(imageView.snp.bottom).offset(80)
             maker.centerX.equalTo(self.view)
             maker.height.equalTo(40)
             maker.width.equalTo(140)
-            maker.bottom.equalToSuperview().offset(-80)
+            maker.bottom.equalToSuperview().offset(-80).priority(500)
         }
         
         actionButton.layer.borderWidth = 1

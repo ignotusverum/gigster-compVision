@@ -98,7 +98,7 @@ class CameraViewController: UIViewController {
         paragraph.lineSpacing = 5
         paragraph.alignment = .center
         
-        titleLabel.attributedText = NSAttributedString(string: "SCAN A FRUIT, VEGGIE OR BEVERAGE LABEL.", attributes: [NSAttributedStringKey.font: UIFont.defaultFont(style: .knockoutLiteweight, size: 30), NSAttributedStringKey.paragraphStyle: paragraph])
+        titleLabel.attributedText = NSAttributedString(string: "SCAN A FRUIT, VEGGIE OR BEVERAGE LABEL.", attributes: [NSAttributedStringKey.font: UIFont.defaultFont(style: .knockoutLiteweight, size: 20), NSAttributedStringKey.paragraphStyle: paragraph])
         
         view.addSubview(titleLabel)
         titleLabel.snp.updateConstraints { maker in
@@ -227,7 +227,7 @@ class CameraViewController: UIViewController {
         paragraph.lineSpacing = 5
         paragraph.alignment = .center
         
-        titleLabel.attributedText = NSAttributedString(string: "Scanning...", attributes: [NSAttributedStringKey.font: UIFont.defaultFont(style: .knockoutLiteweight, size: 30), NSAttributedStringKey.paragraphStyle: paragraph])
+        titleLabel.attributedText = NSAttributedString(string: "Scanning...", attributes: [NSAttributedStringKey.font: UIFont.defaultFont(style: .knockoutLiteweight, size: 20), NSAttributedStringKey.paragraphStyle: paragraph])
         
         cloudinary.createUploader().upload(data: data, uploadPreset: "vejjcwwj", params: params, progress: { (progress) in
             print(progress)

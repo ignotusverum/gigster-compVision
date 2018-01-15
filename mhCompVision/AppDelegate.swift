@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Fabric
+import Crashlytics
 
 let AppWakeNotificationKey = "AppWakeNotificationKey"
 
@@ -24,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         window?.rootViewController = OnboardingContainerViewController()
+        
+        Fabric.with([Crashlytics.self])
         
         return true
     }

@@ -17,6 +17,9 @@ def shared_pods
     pod 'SnapKit'
     
     pod 'Cloudinary'
+    
+    pod 'Fabric'
+    pod 'Crashlytics'
 end
 
 target 'mhCompVision' do

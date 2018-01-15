@@ -2,17 +2,27 @@ PODS:
   - Alamofire (4.6.0)
   - Cloudinary (2.1.0):
     - Alamofire (~> 4.6.0)
+  - Crashlytics (3.9.3):
+    - Fabric (~> 1.7.2)
+  - Fabric (1.7.2)
+  - Hero (1.0.1)
   - SnapKit (4.0.0)
 
 DEPENDENCIES:
   - Cloudinary
+  - Crashlytics
+  - Fabric
+  - Hero
   - SnapKit
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   Cloudinary: e5e1a5288f18f45d4932bfda62c2c50311ccf2a9
+  Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
+  Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
+  Hero: cee286821578e170d8c0c9c9cda7897357401112
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: 3cb503db8a8dc88f5c5f6a9524a696a3d8b522b3
+PODFILE CHECKSUM: 1bb6d008eae4a4238d65ed962aa98e107eb0cffb
 
 COCOAPODS: 1.3.1
