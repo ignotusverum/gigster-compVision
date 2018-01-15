@@ -28,6 +28,8 @@
 		BEFAB84B2009A96400520538 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFAB84A2009A96400520538 /* TutorialViewController.swift */; };
 		BEFAB84E2009B1C300520538 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFAB84D2009B1C300520538 /* ConfirmationViewController.swift */; };
 		BEFAB8512009B5D400520538 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFAB8502009B5D400520538 /* ViewController.swift */; };
+		BEFAB855200D304F00520538 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFAB854200D304F00520538 /* APIManager.swift */; };
+		BEFAB857200D310500520538 /* NetworkingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFAB856200D310500520538 /* NetworkingProtocol.swift */; };
 		F6B214B77A47876B70FFA441 /* Pods_mhCompVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A31B8DF7ABE77C20509E432 /* Pods_mhCompVision.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +60,8 @@
 		BEFAB84A2009A96400520538 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		BEFAB84D2009B1C300520538 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
 		BEFAB8502009B5D400520538 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BEFAB854200D304F00520538 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		BEFAB856200D310500520538 /* NetworkingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 		BE5BE7CD1FFC4C93009FA5CB /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				BEFAB853200D303900520538 /* Networking Manager */,
 				BEFAB84F2009B5CA00520538 /* ViewController */,
 				BEB6E63B2005A71600516694 /* String */,
 				BE793E1D20043F8F002AA018 /* Button */,
@@ -271,6 +276,15 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		BEFAB853200D303900520538 /* Networking Manager */ = {
+			isa = PBXGroup;
+			children = (
+				BEFAB854200D304F00520538 /* APIManager.swift */,
+				BEFAB856200D310500520538 /* NetworkingProtocol.swift */,
+			);
+			path = "Networking Manager";
+			sourceTree = "<group>";
+		};
 		FDD73CEEA1C22529F53B3CD5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -410,14 +424,22 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Cloudinary/Cloudinary.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/Locksmith/Locksmith.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cloudinary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Locksmith.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -440,9 +462,11 @@
 				BE793E1C20043CF9002AA018 /* Color.swift in Sources */,
 				BE793E1F20043F96002AA018 /* UIButton.swift in Sources */,
 				BEFAB84B2009A96400520538 /* TutorialViewController.swift in Sources */,
+				BEFAB857200D310500520538 /* NetworkingProtocol.swift in Sources */,
 				BEFAB84E2009B1C300520538 /* ConfirmationViewController.swift in Sources */,
 				BE5BE7CC1FFC4BB3009FA5CB /* OnboardingViewController.swift in Sources */,
 				BE5BE7CA1FFC48B9009FA5CB /* OnboardingContainerViewController.swift in Sources */,
+				BEFAB855200D304F00520538 /* APIManager.swift in Sources */,
 				BEB6E63A2005A12F00516694 /* MainViewController.swift in Sources */,
 				BEDA15431FFDA22200FF14E1 /* UIView.swift in Sources */,
 				BEFAB8512009B5D400520538 /* ViewController.swift in Sources */,

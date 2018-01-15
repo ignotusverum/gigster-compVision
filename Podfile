@@ -13,6 +13,19 @@ def shared_pods
     
     pod 'Hero'
     
+    # Promises
+    pod 'PromiseKit'
+    
+    pod 'Locksmith'
+    
+    pod 'KeychainAccess'
+    
+    # JSON parser
+    pod 'SwiftyJSON', '~> 4.0.0'
+    
+    # Networking
+    pod 'Alamofire'
+    
     # Layout
     pod 'SnapKit'
     

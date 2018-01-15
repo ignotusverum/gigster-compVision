@@ -9,6 +9,7 @@
 import UIKit
 import Fabric
 import Crashlytics
+import KeychainAccess
 
 let AppWakeNotificationKey = "AppWakeNotificationKey"
 
@@ -20,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /// Shared
     static let shared = UIApplication.shared.delegate as! AppDelegate
 
+    /// Default keychain
+    let keychain = Keychain(service: Bundle.main.bundleIdentifier!)
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow()
