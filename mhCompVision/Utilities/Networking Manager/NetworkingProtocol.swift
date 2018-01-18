@@ -16,7 +16,6 @@ import SwiftyJSON
 import PromiseKit
 
 let hostName = "moet-compvision-be.herokuapp.com"
-let hostVersion = "1"
 
 public let NetworkingManagerAccessTokenKey = "NetworkingManagerAccessTokenKey"
 public let NetworkingManagerKickoffTokenKey = "NetworkingManagerKickoffTokenKey"
@@ -48,7 +47,7 @@ extension NetworkingProtocol {
         configureHeader()
         
         let path = baseURL(path: URLString)
-        
+
         return Promise { fulfill, reject in
             manager.request(path, method: method, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
                 .validate()
@@ -63,20 +62,6 @@ extension NetworkingProtocol {
                         }
                         
                     case .failure(let error):
-                        
-                        if let data = response.data {
-                            let responseJSON = try! JSON(data: data)
-                            
-                            if let messageJSON = responseJSON["errors"].array?.first {
-                                
-                                if let message = messageJSON["detail"].string, let status = messageJSON["status"].int {
-                                    
-                                    let localError = NSError(domain: hostName, code: status, userInfo: [NSLocalizedDescriptionKey : message])
-                                    reject(localError)
-                                }
-                            }
-                        }
-                        
                         reject(error)
                     }
             }

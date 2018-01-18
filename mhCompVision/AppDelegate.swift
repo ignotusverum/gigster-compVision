@@ -31,6 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.rootViewController = OnboardingContainerViewController()
         
+        let _ = UserAdapter.authenticate()
+        
         Fabric.with([Crashlytics.self])
         
         return true

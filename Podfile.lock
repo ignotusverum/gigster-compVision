@@ -7,6 +7,7 @@ PODS:
   - Fabric (1.7.2)
   - Hero (1.0.1)
   - KeychainAccess (3.1.0)
+  - Kingfisher (4.6.1)
   - Locksmith (4.0.0)
   - PromiseKit (4.5.1):
     - PromiseKit/Foundation (= 4.5.1)
@@ -29,6 +30,7 @@ DEPENDENCIES:
   - Fabric
   - Hero
   - KeychainAccess
+  - Kingfisher
   - Locksmith
   - PromiseKit
   - SnapKit
@@ -41,11 +43,12 @@ SPEC CHECKSUMS:
   Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
   Hero: cee286821578e170d8c0c9c9cda7897357401112
   KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
+  Kingfisher: 1f9157d9c02b380cbd0b7cc890161195164eb634
   Locksmith: e9bebbaaa4cee3c511bc358a44f843c3fe00e21f
   PromiseKit: 445dac9b2c3c3b4b31b5f842bc325700b848a8bd
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 7f04d708485bd1b034f3b6051d9ce91da281126e
+PODFILE CHECKSUM: 5e5fe09ca7a3ed1a3a8f5d5493764bed5d37513c
 
 COCOAPODS: 1.3.1

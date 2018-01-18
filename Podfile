@@ -20,6 +20,8 @@ def shared_pods
     
     pod 'KeychainAccess'
     
+    pod 'Kingfisher'
+    
     # JSON parser
     pod 'SwiftyJSON', '~> 4.0.0'
     

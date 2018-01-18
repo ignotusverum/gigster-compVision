@@ -16,4 +16,10 @@ extension String {
     func capitalizingFirst() -> String {
         return prefix(1).uppercased() + dropFirst()
     }
+    
+    func width(usingFont font: UIFont) -> CGFloat {
+        let fontAttributes = [NSAttributedStringKey.font: font]
+        let size = self.size(withAttributes: fontAttributes)
+        return size.width
+    }
 }

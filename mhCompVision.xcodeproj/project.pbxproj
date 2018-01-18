@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE201BBA200D37FF00E79511 /* UserAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE201BB9200D37FF00E79511 /* UserAdapter.swift */; };
+		BE201BBD200D3AEB00E79511 /* CVAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE201BBC200D3AEB00E79511 /* CVAdapter.swift */; };
+		BE201BC0200D5EF400E79511 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE201BBF200D5EF400E79511 /* JSON.swift */; };
+		BE201BC3200D848F00E79511 /* IngredientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE201BC2200D848F00E79511 /* IngredientsViewController.swift */; };
+		BE201BC6200D856000E79511 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE201BC5200D856000E79511 /* NavigationView.swift */; };
+		BE201BC9200D85B800E79511 /* TabNavigationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE201BC8200D85B800E79511 /* TabNavigationCell.swift */; };
+		BE201BCD200D8A9B00E79511 /* IngredientsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE201BCC200D8A9B00E79511 /* IngredientsAdapter.swift */; };
+		BE201BD0200D904100E79511 /* IngredientsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE201BCF200D904100E79511 /* IngredientsCollectionViewCell.swift */; };
 		BE3CEF341FFC5F4F0042BEFE /* TradeGothic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE3CEF331FFC5F4F0042BEFE /* TradeGothic-Bold.ttf */; };
 		BE3CEF361FFC5F540042BEFE /* TradeGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE3CEF351FFC5F540042BEFE /* TradeGothic.ttf */; };
 		BE5BE7CA1FFC48B9009FA5CB /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5BE7C91FFC48B9009FA5CB /* OnboardingContainerViewController.swift */; };
@@ -37,6 +45,14 @@
 		1E2FBD146135690141CEDE76 /* Pods-mhCompVision.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mhCompVision.release.xcconfig"; path = "Pods/Target Support Files/Pods-mhCompVision/Pods-mhCompVision.release.xcconfig"; sourceTree = "<group>"; };
 		3C60F9F7D201D3559BF05360 /* Pods-mhCompVision.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mhCompVision.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mhCompVision/Pods-mhCompVision.debug.xcconfig"; sourceTree = "<group>"; };
 		7A31B8DF7ABE77C20509E432 /* Pods_mhCompVision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mhCompVision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE201BB9200D37FF00E79511 /* UserAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAdapter.swift; sourceTree = "<group>"; };
+		BE201BBC200D3AEB00E79511 /* CVAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVAdapter.swift; sourceTree = "<group>"; };
+		BE201BBF200D5EF400E79511 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		BE201BC2200D848F00E79511 /* IngredientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsViewController.swift; sourceTree = "<group>"; };
+		BE201BC5200D856000E79511 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		BE201BC8200D85B800E79511 /* TabNavigationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabNavigationCell.swift; sourceTree = "<group>"; };
+		BE201BCC200D8A9B00E79511 /* IngredientsAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsAdapter.swift; sourceTree = "<group>"; };
+		BE201BCF200D904100E79511 /* IngredientsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE3CEF331FFC5F4F0042BEFE /* TradeGothic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TradeGothic-Bold.ttf"; sourceTree = "<group>"; };
 		BE3CEF351FFC5F540042BEFE /* TradeGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TradeGothic.ttf; sourceTree = "<group>"; };
 		BE5BE7C91FFC48B9009FA5CB /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
@@ -84,9 +100,75 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BE201BB8200D368200E79511 /* User Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				BE201BB9200D37FF00E79511 /* UserAdapter.swift */,
+			);
+			path = "User Adapter";
+			sourceTree = "<group>";
+		};
+		BE201BBB200D3ADB00E79511 /* CV Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				BE201BBC200D3AEB00E79511 /* CVAdapter.swift */,
+			);
+			path = "CV Adapter";
+			sourceTree = "<group>";
+		};
+		BE201BBE200D5EF000E79511 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				BE201BBF200D5EF400E79511 /* JSON.swift */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		BE201BC1200D847A00E79511 /* Ingredients */ = {
+			isa = PBXGroup;
+			children = (
+				BE201BC2200D848F00E79511 /* IngredientsViewController.swift */,
+			);
+			path = Ingredients;
+			sourceTree = "<group>";
+		};
+		BE201BC4200D855500E79511 /* NavigationView */ = {
+			isa = PBXGroup;
+			children = (
+				BE201BC5200D856000E79511 /* NavigationView.swift */,
+			);
+			path = NavigationView;
+			sourceTree = "<group>";
+		};
+		BE201BC7200D859B00E79511 /* Collection Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BE201BCE200D903500E79511 /* Ingredients */,
+				BE201BC8200D85B800E79511 /* TabNavigationCell.swift */,
+			);
+			path = "Collection Cells";
+			sourceTree = "<group>";
+		};
+		BE201BCB200D8A8C00E79511 /* Ingredients Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				BE201BCC200D8A9B00E79511 /* IngredientsAdapter.swift */,
+			);
+			path = "Ingredients Adapter";
+			sourceTree = "<group>";
+		};
+		BE201BCE200D903500E79511 /* Ingredients */ = {
+			isa = PBXGroup;
+			children = (
+				BE201BCF200D904100E79511 /* IngredientsCollectionViewCell.swift */,
+			);
+			path = Ingredients;
+			sourceTree = "<group>";
+		};
 		BE5BE7C71FFC48A1009FA5CB /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				BE201BC1200D847A00E79511 /* Ingredients */,
 				BEFAB84C2009B1B900520538 /* Confirmation */,
 				BEFAB8492009A94300520538 /* Tutorial */,
 				BEFAB83E20098C4000520538 /* Camera */,
@@ -108,6 +190,7 @@
 		BE5BE7CD1FFC4C93009FA5CB /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				BE201BBE200D5EF000E79511 /* JSON */,
 				BEFAB853200D303900520538 /* Networking Manager */,
 				BEFAB84F2009B5CA00520538 /* ViewController */,
 				BEB6E63B2005A71600516694 /* String */,
@@ -230,6 +313,8 @@
 		BEFAB84220098E0600520538 /* Custom UI */ = {
 			isa = PBXGroup;
 			children = (
+				BE201BC7200D859B00E79511 /* Collection Cells */,
+				BE201BC4200D855500E79511 /* NavigationView */,
 				BEFAB846200992E100520538 /* EmptyView */,
 				BEFAB84320098E1200520538 /* CameraView */,
 			);
@@ -279,6 +364,9 @@
 		BEFAB853200D303900520538 /* Networking Manager */ = {
 			isa = PBXGroup;
 			children = (
+				BE201BCB200D8A8C00E79511 /* Ingredients Adapter */,
+				BE201BBB200D3ADB00E79511 /* CV Adapter */,
+				BE201BB8200D368200E79511 /* User Adapter */,
 				BEFAB854200D304F00520538 /* APIManager.swift */,
 				BEFAB856200D310500520538 /* NetworkingProtocol.swift */,
 			);
@@ -425,6 +513,7 @@
 				"${BUILT_PRODUCTS_DIR}/Cloudinary/Cloudinary.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Locksmith/Locksmith.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -436,6 +525,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cloudinary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Locksmith.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -453,23 +543,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE201BBD200D3AEB00E79511 /* CVAdapter.swift in Sources */,
 				BEFAB84020098C4B00520538 /* CameraViewController.swift in Sources */,
 				BEFAB848200992E800520538 /* EmptyView.swift in Sources */,
+				BE201BD0200D904100E79511 /* IngredientsCollectionViewCell.swift in Sources */,
+				BE201BBA200D37FF00E79511 /* UserAdapter.swift in Sources */,
 				BEDDA40A1FFD9A5500B6D16D /* Font.swift in Sources */,
+				BE201BC3200D848F00E79511 /* IngredientsViewController.swift in Sources */,
 				BE72DBE71FF30A9E009F6381 /* AppDelegate.swift in Sources */,
 				BEFAB84520098E1A00520538 /* CameraView.swift in Sources */,
 				BEB6E63D2005A71D00516694 /* String.swift in Sources */,
 				BE793E1C20043CF9002AA018 /* Color.swift in Sources */,
 				BE793E1F20043F96002AA018 /* UIButton.swift in Sources */,
 				BEFAB84B2009A96400520538 /* TutorialViewController.swift in Sources */,
+				BE201BC6200D856000E79511 /* NavigationView.swift in Sources */,
 				BEFAB857200D310500520538 /* NetworkingProtocol.swift in Sources */,
 				BEFAB84E2009B1C300520538 /* ConfirmationViewController.swift in Sources */,
 				BE5BE7CC1FFC4BB3009FA5CB /* OnboardingViewController.swift in Sources */,
 				BE5BE7CA1FFC48B9009FA5CB /* OnboardingContainerViewController.swift in Sources */,
+				BE201BC9200D85B800E79511 /* TabNavigationCell.swift in Sources */,
+				BE201BC0200D5EF400E79511 /* JSON.swift in Sources */,
 				BEFAB855200D304F00520538 /* APIManager.swift in Sources */,
 				BEB6E63A2005A12F00516694 /* MainViewController.swift in Sources */,
 				BEDA15431FFDA22200FF14E1 /* UIView.swift in Sources */,
 				BEFAB8512009B5D400520538 /* ViewController.swift in Sources */,
+				BE201BCD200D8A9B00E79511 /* IngredientsAdapter.swift in Sources */,
 				BEDDA40D1FFD9ABF00B6D16D /* Device.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

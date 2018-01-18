@@ -8,10 +8,14 @@
 
 import UIKit
 import AVKit
+import SwiftyJSON
+import PromiseKit
 import Foundation
 import Cloudinary
 
 class CameraViewController: UIViewController {
+    
+    var creationCount = 0
     
     lazy var cameraView: CameraView = CameraView()
     
@@ -232,6 +236,7 @@ class CameraViewController: UIViewController {
         cloudinary.createUploader().upload(data: data, uploadPreset: "vejjcwwj", params: params, progress: { (progress) in
             print(progress)
         }) { (result, error) in
+            
             self.imageView.isHidden = true
             self.flashButton.isHidden = false
             self.recordButton.isHidden = false
@@ -239,7 +244,31 @@ class CameraViewController: UIViewController {
             
             self.titleLabel.attributedText = oldTitle
             
-            self.navigationController?.pushViewController(ConfirmationViewController(), animated: true)
+            guard let result = result, let url = result.url else {
+                return
+            }
+            
+            self.createURL(url: url)
+        }
+    }
+    
+    func createURL(url: String) {
+        
+        let _ = CVAdapter.create(url: url).then { response-> Promise<JSON> in
+            print(response)
+            print("YO0000000")
+            
+            guard let id = response["id"].int else {
+                self.createURL(url: url)
+                return Promise(value: .null)
+            }
+            
+            return CVAdapter.fetch(id: id)
+            }.then { response-> Void in
+                print(response)
+            self.navigationController?.pushViewController(ConfirmationViewController(json: response), animated: true)
+            }.catch { error in
+                print(error)
         }
     }
 }

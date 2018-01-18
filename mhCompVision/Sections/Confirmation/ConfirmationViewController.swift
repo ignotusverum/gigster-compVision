@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import SwiftyJSON
 import Foundation
+import Kingfisher
 
 class ConfirmationViewController: UIViewController {
+    
+    var json: JSON
     
     lazy var titleLabel: UILabel = {
         
@@ -24,7 +28,7 @@ class ConfirmationViewController: UIViewController {
     lazy var imageView: UIImageView = {
         
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
@@ -56,6 +60,15 @@ class ConfirmationViewController: UIViewController {
         return button
     }()
     
+    init(json: JSON) {
+        self.json = json
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -67,24 +80,38 @@ class ConfirmationViewController: UIViewController {
         view.backgroundColor = .white
         
         view.addSubview(imageView)
-        imageView.image = #imageLiteral(resourceName: "clementine")
-        imageView.snp.updateConstraints { maker in
-            maker.top.equalToSuperview().offset(150)
-            maker.left.equalToSuperview().offset(50)
-            maker.right.equalToSuperview().offset(-50)
-            maker.width.height.equalTo(100)
+        view.addSubview(titleLabel)
+        
+        if let urlString = json["url"].string, let url = URL(string: urlString) {
+            print(url)
+            imageView.kf.setImage(with: url)
+        } else {
+            imageView.image = nil
         }
         
-        view.addSubview(titleLabel)
+        imageView.snp.updateConstraints { maker in
+            maker.top.equalToSuperview().offset(100)
+            maker.left.equalToSuperview().offset(50)
+            maker.right.equalToSuperview().offset(-50)
+            maker.height.equalTo(250)
+        }
         
         let paragraph = NSMutableParagraphStyle()
         paragraph.lineSpacing = 5
         paragraph.alignment = .center
         
-        titleLabel.attributedText = NSAttributedString(string: "Is this an orange?".uppercased(), attributes: [NSAttributedStringKey.font: UIFont.defaultFont(style: .knockoutLiteweight, size: 20), NSAttributedStringKey.paragraphStyle: paragraph])
+        var string = "We cannot figure out what that is!"
+        if let ingredients = json["ingredients"].array, let first = ingredients.first, let ingredient = first["ingredient"].json, let name = ingredient["name"].string {
+            string = name
+        } else {
+            yesButton.setTitle("Try again", for: .normal)
+            noButton.setTitle("Select ingredient", for: .normal)
+        }
+        
+        titleLabel.attributedText = NSAttributedString(string: string.uppercased(), attributes: [NSAttributedStringKey.font: UIFont.defaultFont(style: .knockoutLiteweight, size: 20), NSAttributedStringKey.paragraphStyle: paragraph])
         
         titleLabel.snp.updateConstraints { maker in
-            maker.top.equalTo(imageView.snp.bottom).offset(120)
+            maker.top.equalTo(imageView.snp.bottom).offset(40)
             maker.left.equalToSuperview().offset(40)
             maker.right.equalToSuperview().offset(-40)
         }
@@ -119,6 +146,11 @@ class ConfirmationViewController: UIViewController {
     
     @objc
     func onNo(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        
+        if let _ = json["ingredients"].array {
+            navigationController?.popViewController(animated: true)
+        } else {
+            navigationController?.pushViewController(IngredientsViewController(), animated: true)
+        }
     }
 }

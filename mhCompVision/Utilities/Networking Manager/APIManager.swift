@@ -22,7 +22,7 @@ public class APIManager: NetworkingProtocol {
     
     /// Header setup
     var headers = [
-        "Accept": "*/*",
+        "Accept": "application/json",
         "Content-Type": "application/json"
     ]
     
@@ -49,8 +49,6 @@ public class APIManager: NetworkingProtocol {
     /// Default manager setup
     var manager = Alamofire.SessionManager.default
     
-    static let contentTypeString = "application/vnd.api+json"
-    
     /// Header configuration
     func configureHeader() {
         
@@ -61,11 +59,10 @@ public class APIManager: NetworkingProtocol {
         }
         
         headers["Authorization"] = accessToken
-        headers["Content-Type"] = APIManager.contentTypeString
     }
     
     /// Base URL setup
     func baseURL(path: String) -> URL {
-        return URL(string: "https://\(hostName)/v\(hostVersion)/\(path)")!
+        return URL(string: "https://\(hostName)/\(path)")!
     }
 }
