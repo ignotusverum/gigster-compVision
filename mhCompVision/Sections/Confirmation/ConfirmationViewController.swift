@@ -15,6 +15,8 @@ class ConfirmationViewController: UIViewController {
     
     var json: JSON
     
+    var fetchCount: Int = 0
+    
     lazy var titleLabel: UILabel = {
         
         let label = UILabel()
@@ -72,6 +74,8 @@ class ConfirmationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fetchData()
+        
         navigationController?.navigationBar.backIndicatorImage = #imageLiteral(resourceName: "back_icon")
         navigationController?.navigationBar.backIndicatorTransitionMaskImage = #imageLiteral(resourceName: "back_icon")
         navigationController?.navigationBar.backItem?.title = ""
@@ -82,13 +86,6 @@ class ConfirmationViewController: UIViewController {
         view.addSubview(imageView)
         view.addSubview(titleLabel)
         
-        if let urlString = json["url"].string, let url = URL(string: urlString) {
-            print(url)
-            imageView.kf.setImage(with: url)
-        } else {
-            imageView.image = nil
-        }
-        
         imageView.snp.updateConstraints { maker in
             maker.top.equalToSuperview().offset(100)
             maker.left.equalToSuperview().offset(50)
@@ -96,19 +93,7 @@ class ConfirmationViewController: UIViewController {
             maker.height.equalTo(250)
         }
         
-        let paragraph = NSMutableParagraphStyle()
-        paragraph.lineSpacing = 5
-        paragraph.alignment = .center
         
-        var string = "We cannot figure out what that is!"
-        if let ingredients = json["ingredients"].array, let first = ingredients.first, let ingredient = first["ingredient"].json, let name = ingredient["name"].string {
-            string = name
-        } else {
-            yesButton.setTitle("Try again", for: .normal)
-            noButton.setTitle("Select ingredient", for: .normal)
-        }
-        
-        titleLabel.attributedText = NSAttributedString(string: string.uppercased(), attributes: [NSAttributedStringKey.font: UIFont.defaultFont(style: .knockoutLiteweight, size: 20), NSAttributedStringKey.paragraphStyle: paragraph])
         
         titleLabel.snp.updateConstraints { maker in
             maker.top.equalTo(imageView.snp.bottom).offset(40)
@@ -137,6 +122,44 @@ class ConfirmationViewController: UIViewController {
         
         yesButton.layer.cornerRadius = 8
         yesButton.clipsToBounds = true
+    }
+    
+    func fetchData() {
+        if let id = json["id"].int {
+            
+            let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
+            DispatchQueue.main.asyncAfter(deadline: when) {
+                let _ = CVAdapter.fetch(id: id).then { response-> Void in
+                    self.json = response
+                    print(response)
+                    if response["categories"] == nil && self.fetchCount < 16 {
+                        self.fetchData()
+                        self.fetchCount += 1
+                    }
+                }
+            }
+        }
+        
+        if let urlString = json["url"].string, let url = URL(string: urlString) {
+            print(url)
+            imageView.kf.setImage(with: url)
+        } else {
+            imageView.image = #imageLiteral(resourceName: "question")
+        }
+        
+        var string = "We cannot figure out what that is!"
+        if let ingredients = json["ingredients"].array, let first = ingredients.first, let ingredient = first["ingredient"].json, let name = ingredient["name"].string {
+            string = name
+        } else {
+            yesButton.setTitle("Try again", for: .normal)
+            noButton.setTitle("Select ingredient", for: .normal)
+        }
+        
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.lineSpacing = 5
+        paragraph.alignment = .center
+        
+        titleLabel.attributedText = NSAttributedString(string: string.uppercased(), attributes: [NSAttributedStringKey.font: UIFont.defaultFont(style: .knockoutLiteweight, size: 20), NSAttributedStringKey.paragraphStyle: paragraph])
     }
     
     @objc
